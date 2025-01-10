@@ -16,6 +16,42 @@ class WidgetbookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Widgetbook.material(
       directories: directories,
+      addons: [
+        DeviceFrameAddon(
+          initialDevice: Devices.ios.iPhone13,
+          devices: [
+            Devices.ios.iPhone13,
+            Devices.ios.iPhone13ProMax,
+            Devices.android.mediumPhone,
+          ],
+        ),
+        MaterialThemeAddon(
+          themes: [
+            WidgetbookTheme(name: 'Light', data: ThemeData.light()),
+            WidgetbookTheme(name: 'Dark', data: ThemeData.dark()),
+          ],
+        ),
+        TextScaleAddon(
+          min: 0.5,
+          max: 3.0,
+          divisions: 5,
+        ),
+        BuilderAddon(
+          name: 'Scaffold & SafeArea',
+          builder: (context, child) {
+            return Scaffold(
+              body: SingleChildScrollView(
+                child: SizedBox(
+                  width: double.infinity,
+                  child: SafeArea(
+                    child: child,
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 }
