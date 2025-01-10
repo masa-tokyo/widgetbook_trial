@@ -9,11 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  widgetbook: ^3.10.1
+  widgetbook_annotation: ^3.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  widgetbook_generator: ^3.9.1
+  build_runner: ^2.4.14
 
 flutter:
   uses-material-design: true
